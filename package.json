@@ -9,6 +9,7 @@
   "author": "0xdebaser",
   "license": "ISC",
   "dependencies": {
-    "square": "^34.0.1"
+    "square": "^34.0.1",
+    "squareup": "^1.0.0"
   }
 }

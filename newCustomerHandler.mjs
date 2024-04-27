@@ -1,6 +1,14 @@
-export default async function customerHandler(data, squareClient) {
-  let squareCustomerId;
+import { Client, Environment } from "square";
+
+export default async function newCustomerHandler(data) {
+  let squareClient;
+
   try {
+    if (!squareClient)
+      squareClient = new Client({
+        bearerAuthCredentials: { accessToken: process.env.SQUARE_ACCESS_TOKEN },
+        environment: Environment.Production,
+      });
     const customer = data.customer;
     const response = await squareClient.customersApi.searchCustomers({
       query: {
@@ -11,7 +19,7 @@ export default async function customerHandler(data, squareClient) {
         },
       },
     });
-    console.log(response.result);
+
     // Is customer already in Square?
     if (response.result.hasOwnProperty("customers")) {
       squareCustomerId = response.result.customers[0].id;
