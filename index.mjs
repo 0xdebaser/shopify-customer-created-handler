@@ -1,11 +1,10 @@
-import createSquareOrderFromShopifyOrder from "./createSquareOrderFromShopifyOrder.mjs";
-
 export const handler = async (event, context, callback) => {
   let responseObject;
 
   try {
     const data = await JSON.parse(event.body);
-    createSquareOrderFromShopifyOrder(data);
+    newCustomerEmail = data.customer.email;
+    console.log(newCustomerEmail);
     responseObject = {
       result: "success",
     };
