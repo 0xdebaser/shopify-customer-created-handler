@@ -23,7 +23,9 @@ export default async function newCustomerHandler(data) {
     // Is customer already in Square?
     if (response.result.hasOwnProperty("customers")) {
       squareCustomerId = response.result.customers[0].id;
-      console.log(`Customer found. Returning id: ${squareCustomerId}`);
+      console.log(
+        `Customer with email address ${customer.email} already exists in Square.`
+      );
     } else {
       // If not, make a new customer
       const response1 = await squareClient.customersApi.createCustomer({
