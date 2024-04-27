@@ -3,7 +3,7 @@ export const handler = async (event, context, callback) => {
 
   try {
     const data = await JSON.parse(event.body);
-    newCustomerEmail = data.customer.email;
+    const newCustomerEmail = data.customer.email;
     console.log(newCustomerEmail);
     responseObject = {
       result: "success",
