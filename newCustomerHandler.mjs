@@ -39,7 +39,7 @@ export default async function newCustomerHandler(data) {
         `New customer created for ${newCustomerEmail}: Square Customer Id: ${squareCustomerId}`
       );
     }
-    return squareCustomerId;
+    return true;
   } catch (error) {
     console.log(error);
     return false;
