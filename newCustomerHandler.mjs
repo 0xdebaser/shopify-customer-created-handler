@@ -34,7 +34,7 @@ export default async function newCustomerHandler(data) {
         familyName: data.last_name,
         givenName: data.first_name,
       });
-      squareCustomerId = response1.result.customer.id;
+      const squareCustomerId = response1.result.customer.id;
       console.log(
         `New customer created for ${newCustomerEmail}: Square Customer Id: ${squareCustomerId}`
       );
