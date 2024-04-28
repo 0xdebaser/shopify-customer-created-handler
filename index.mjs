@@ -5,7 +5,6 @@ export const handler = async (event, context, callback) => {
 
   try {
     const data = await JSON.parse(event.body);
-    console.log(data);
     newCustomerHandler(data);
     responseObject = {
       result: "success",
