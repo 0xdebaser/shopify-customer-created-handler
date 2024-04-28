@@ -25,7 +25,7 @@ export default async function newCustomerHandler(data) {
     // Is customer already in Square?
     if (response.result.hasOwnProperty("customers")) {
       console.log(
-        `Customer with email address ${customer.email} already exists in Square.`
+        `Customer with email address ${newCustomerEmail} already exists in Square.`
       );
     } else {
       // If not, make a new customer
