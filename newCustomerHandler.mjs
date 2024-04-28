@@ -8,7 +8,7 @@ export default async function newCustomerHandler(data) {
   try {
     if (!squareClient)
       squareClient = new Client({
-        bearerAuthCredentials: { accessToken: process.env.SQUARE_ACCESS_TOKEN },
+        accessToken: process.env.SQUARE_ACCESS_TOKEN,
         environment: Environment.Production,
       });
     const newCustomerEmail = data.email.trim();
