@@ -31,8 +31,8 @@ export default async function newCustomerHandler(data) {
       // If not, make a new customer
       const response1 = await squareClient.customersApi.createCustomer({
         emailAddress: newCustomerEmail,
-        familyName: data.last_name,
-        givenName: data.first_name,
+        familyName: data.last_name ? data.last_name : "",
+        givenName: data.first_name ? data.first_name : "",
       });
       const squareCustomerId = response1.result.customer.id;
       console.log(
