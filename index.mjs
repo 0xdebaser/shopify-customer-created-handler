@@ -1,11 +1,12 @@
+import newCustomerHandler from "./newCustomerHandler.mjs";
+
 export const handler = async (event, context, callback) => {
   let responseObject;
 
   try {
     const data = await JSON.parse(event.body);
     console.log(data);
-    const newCustomerEmail = data.customer.email;
-    console.log(newCustomerEmail);
+    newCustomerHandler(data);
     responseObject = {
       result: "success",
     };
